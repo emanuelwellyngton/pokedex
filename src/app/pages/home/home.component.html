@@ -1,11 +1,6 @@
-<header>
-    <img class="simbol" src="../../../assets/Logo.png" alt="Imagem de uma Pokebola">
-    <h1 class="logotype">Pokedex</h1>
-</header>
 <main>
     <app-search></app-search>
     <section class="cards">
-        <app-card></app-card>
-        <app-card></app-card>
+        <app-card *ngFor="let pokemon of pokemons" [pokemon]="pokemon"></app-card>
     </section>
 </main>

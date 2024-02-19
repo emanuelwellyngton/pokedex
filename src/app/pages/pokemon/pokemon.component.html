@@ -1,0 +1,11 @@
+<div class="container">
+    <h2 class="standard-title title roboto-black-italic">{{pokemon?.name}}</h2>
+    <img class="imagem-pokemon" [src]="pokemon?.image" alt="">
+    <h3 class="standard-title subtitulo roboto-black-italic">Estatísticas</h3>
+    <div class="statics">
+        <div *ngFor="let stat of pokemon?.stats" class="line">
+            <p>{{stat.pokemon_v2_stat.name}}</p>
+            <p class="value">{{stat.base_stat}}</p>
+        </div>
+    </div>
+</div>
