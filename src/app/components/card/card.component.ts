@@ -8,7 +8,7 @@ import { Pokemon } from 'src/app/models/pokemon';
     <div class="title-section"><p class="title">{{pokemon?.name}}</p></div>
       <div class="card-body">
         <div class="container">
-          <p *ngFor="let item of pokemon?.types" class="tag">{{item.pokemon_v2_type.name}}</p>
+          <p *ngFor="let item of pokemon?.types" class="tag">{{item.type.name}}</p>
         </div>
       <img [src]="pokemon?.image" alt="">
     </div>

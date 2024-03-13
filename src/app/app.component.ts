@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   template: `
   <header>
     <img class="simbol" src="../../../assets/Logo.png" alt="Imagem de uma Pokebola">
-    <a href=""><h1 class="logotype">Pokedex</h1></a>
+    <a href=""><h1 class="logotype">pokedex</h1></a>
   </header>
   <router-outlet></router-outlet>`
   ,
@@ -24,6 +24,7 @@ import { Component } from '@angular/core';
       line-height: 37.5px;
       font-style: italic;
       font-weight: 900;
+      text-transform: capitalize;
   }
 
   .simbol {

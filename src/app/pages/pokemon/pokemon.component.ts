@@ -19,20 +19,20 @@ export class PokemonComponent implements OnInit{
   ngOnInit(): void {
     const pokemonId = this.activatedRoute.snapshot.params['id'];
 
-    this.pokemonService.getPokemonById(pokemonId).subscribe({
-      next: res => {
-        const data = res.data.pokemon_v2_pokemonform[0];
-        const pokemon: Pokemon = {
-          id: data.id,
-          name: data.name.substring(0, 1).toUpperCase() + data.name.substring(1),
-          image: data.pokemon_v2_pokemon.pokemon_v2_pokemonsprites[0].sprites,
-          types: null,
-          stats: data.pokemon_v2_pokemon.pokemon_v2_pokemonstats
-        };
-        this.pokemon = pokemon;
-        this.title.setTitle(pokemon.name + ' | Pokedex');
-      },
-      error: err => console.log(err)
-    })
+    // this.pokemonService.getPokemonById(pokemonId).subscribe({
+    //   next: res => {
+    //     const data = res.data.pokemon_v2_pokemonform[0];
+    //     const pokemon: Pokemon = {
+    //       id: data.id,
+    //       name: data.name.substring(0, 1).toUpperCase() + data.name.substring(1),
+    //       image: data.pokemon_v2_pokemon.pokemon_v2_pokemonsprites[0].sprites,
+    //       types: null,
+    //       stats: data.pokemon_v2_pokemon.pokemon_v2_pokemonstats
+    //     };
+    //     this.pokemon = pokemon;
+    //     this.title.setTitle(pokemon.name + ' | Pokedex');
+    //   },
+    //   error: err => console.log(err)
+    // })
   }
 }

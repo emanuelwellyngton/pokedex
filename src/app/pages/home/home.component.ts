@@ -14,19 +14,13 @@ export class HomeComponent implements OnInit{
   public constructor(private pokemonService: PokemonService) {}
 
   public ngOnInit(): void {
-    this.pokemonService.getPokemons().subscribe({
-      next: res => {res.data.pokemon_v2_pokemonform.forEach((item: any) => {
-        const pokemon: Pokemon = {
-          name: item.name.substring(0,1).toUpperCase() + item.name.substring(1),
-          id: item.id,
-          types: item.pokemon_v2_pokemon.pokemon_v2_pokemontypes,
-          stats: null,
-          image: item.pokemon_v2_pokemon.pokemon_v2_pokemonsprites[0].sprites
-        };
-        this.pokemons.push(pokemon);
-      })
-      console.log(res);},
-      error: err => console.log(err)
-    })
+    this.pokemonService.getPokemons();
   }
+
+  // public search(name: string) {
+  //   this.pokemonService.searchByName(name).subscribe({
+  //     next: res => console.log(res),
+  //     error: err => console.log(err)
+  //   });
+  // }
 }

@@ -16,6 +16,7 @@
     color: var(--primary-txt-color);
     font-size: 22px;
     line-height: 25.78px;
+    text-transform: capitalize;
 }
 
 .card-body {

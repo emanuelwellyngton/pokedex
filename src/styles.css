@@ -46,3 +46,9 @@ a {
     font-size: 32px;
     line-height: 37.2px;
 }
+
+@media (max-width: 800px) {
+    body{
+        width: 80vw;
+    }
+}
