@@ -9,12 +9,17 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 })
 export class HomeComponent implements OnInit{
 
-  public pokemons: Array<Pokemon> = [];
+  public pokemons: Array<any> = [];
 
   public constructor(private pokemonService: PokemonService) {}
 
   public ngOnInit(): void {
-    this.pokemonService.getPokemons();
+    this.pokemonService.getPokemons().subscribe({
+      next: res => {
+        this.pokemons = res.results;
+      },
+      error: err => console.log(err)
+    });
   }
 
   // public search(name: string) {
