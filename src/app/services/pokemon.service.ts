@@ -11,8 +11,17 @@ export class PokemonService {
 
   constructor(private httpCliente: HttpClient) { }
 
-  public getPokemons() {
-    this.httpCliente.get<any>(this.url).pipe()
+  public getPokemons(): Observable<any> {
+    return this.httpCliente.get<any>(this.url).pipe(
+      tap(
+        res => res.results.map(
+          (pokemon: any) => this.getPokemon(pokemon.url).subscribe({
+            next: res => pokemon.status = res,
+            error: err => console.log(err)
+          })
+        )
+      )
+    );
   }
 
   public getPokemon(url: string): Observable<any> {
