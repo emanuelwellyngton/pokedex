@@ -28,16 +28,12 @@ export class PokemonService {
     return this.httpCliente.get<any>(url);
   }
 
-  // public getPokemonById(id: string): Observable<any> {
-  //   const body = {
-  //     query: `{ pokemon_v2_pokemonform(limit: 10, where: {id: {_eq: ${id}}}) { id, name, pokemon_v2_pokemon 
-  //       { pokemon_v2_pokemonsprites{sprites(path: "front_default")}, pokemon_v2_pokemonstats{base_stat, pokemon_v2_stat{name}} }}}`
-  //   };
-  //   return this.httpCliente.post<any>(`${this.url}`, body, this.httpOptions).pipe(
-  //     res => res,
-  //     error => error
-  //   )
-  // }
+  public getPokemonById(id: string): Observable<any> {
+    return this.httpCliente.get<any>(`${this.url}/` + id).pipe(
+      res => res,
+      error => error
+    )
+  }
 
   // public searchByName(name: string): Observable<any> {
   //   const body = {
