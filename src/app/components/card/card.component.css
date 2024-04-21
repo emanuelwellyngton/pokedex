@@ -35,3 +35,8 @@
     color: var(--primary-txt-color);
     margin-top: 5px;
 }
+
+.image {
+    width: 60px;
+    max-height: 60px;
+}
