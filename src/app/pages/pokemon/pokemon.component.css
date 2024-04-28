@@ -12,6 +12,7 @@
     position: relative;
     top: -55px;
     text-align: end;
+    text-transform: capitalize;
 }
 
 .imagem-pokemon {
@@ -45,4 +46,10 @@
 
 .value {
     font-weight: 700;
+}
+
+@media screen and (max-width: 500px) {
+    .imagem-pokemon {
+        height: 100px;
+    }
 }
