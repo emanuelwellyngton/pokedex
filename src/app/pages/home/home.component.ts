@@ -22,10 +22,11 @@ export class HomeComponent implements OnInit{
     });
   }
 
-  // public search(name: string) {
-  //   this.pokemonService.searchByName(name).subscribe({
-  //     next: res => console.log(res),
-  //     error: err => console.log(err)
-  //   });
-  // }
+  public search(name: string) {
+    console.log(name);
+    this.pokemonService.searchByName(name).subscribe({
+      next: res => console.log(res),
+      error: err => console.log(err)
+    });
+  }
 }

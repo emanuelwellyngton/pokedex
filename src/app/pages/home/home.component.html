@@ -1,5 +1,5 @@
 <main>
-    <!-- <app-search (searchEvent)="search($event)"></app-search> -->
+    <app-search (searchEvent)="search($event)"></app-search>
     <section class="cards">
         <ng-container *ngFor="let pokemon of pokemons">
             <app-card [pokemon]="pokemon"></app-card>

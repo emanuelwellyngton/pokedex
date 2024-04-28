@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { Observable, switchMap, tap } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -35,14 +35,14 @@ export class PokemonService {
     )
   }
 
-  // public searchByName(name: string): Observable<any> {
-  //   const body = {
-  //     query: `{ pokemon_v2_pokemonform(limit: 10, where: {name: {_similar: "%${name}%"}}) { id, name, pokemon_v2_pokemon { pokemon_v2_pokemonsprites{sprites(path: "front_default")} }}}`
-  //   };
-  //   return this.httpCliente.post<any>(`${this.url}`, body, this.httpOptions).pipe(
-  //     res => res,
-  //     error => error
-  //   )
-  // }
+  public searchByName(name: string): Observable<any> {
+    const body = {
+      query: `{ pokemon_v2_pokemonform(limit: 10, where: {name: {_similar: "%${name}%"}}) { id, name, pokemon_v2_pokemon { pokemon_v2_pokemonsprites{sprites(path: "front_default")} }}}`
+    };
+    return this.httpCliente.post<any>(`${this.url}`, body).pipe(
+      res => res,
+      error => error
+    )
+  }
   
 }
